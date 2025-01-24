@@ -88,13 +88,30 @@ const ageObject = {
     age: 29,
 }
 
-function plusOneOnAge(obj) {
-   obj.age = obj.age + 1
-   return obj
+const noAge = {
+    username: "Beta",
 }
 
-console.log("the new age:", plusOneOnAge(ageObject))
 
-const copyofAgeObject = {...ageObject}
+function plusOneOnAge(obj) {
+    if("age" in obj) {
+        obj.age = obj.age + 1
+            
+    } else {
+        obj.age = 0
+    }
+    obj.updated_at = new Date()
+    return obj
+}
 
-console.log(copyofAgeObject)
+// console.log("the new age:", plusOneOnAge(ageObject))
+console.log("the age:", plusOneOnAge(noAge))
+
+function copyObectPlusOne (obj) {
+    let copy = {...obj, age: obj.age + 1, updated_at: new Date()}
+    return copy
+}
+console.log(copyObectPlusOne(ageObject))
+
+// console.log("copy:", copyofAgeObject)
+
