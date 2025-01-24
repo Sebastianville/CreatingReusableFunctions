@@ -1,5 +1,4 @@
 //part 1
-
 const numbers = [10, 5, 8, 1, 3];
 
 function sumArray (arr) {
@@ -49,7 +48,7 @@ function printEveryNumber(num) {
 printEveryNumber(9)
 
 
-
+//part 2
 let dataObject = [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" },
     { id: "48", name: "Barry", occupation: "Runner", age: "25" },
     { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
@@ -62,7 +61,7 @@ console.log("Ascending:", dataObject);
 
 
 const newObject = dataObject.filter(num => num.age > 50 );
-console.log(newObject)
+console.log("this is the new object:", newObject)
 
 const changeJobAndAge = dataObject.map(a => ({
     id: a.id,
@@ -80,3 +79,22 @@ console.log("Sum of Ages:", totalAge);
 
 const averageAge = totalAge / changeJobAndAge.length;
 console.log("Average Age:", averageAge.toFixed(2));
+
+
+
+//part 3
+const ageObject = {
+    username: "Alpha",
+    age: 29,
+}
+
+function plusOneOnAge(obj) {
+   obj.age = obj.age + 1
+   return obj
+}
+
+console.log("the new age:", plusOneOnAge(ageObject))
+
+const copyofAgeObject = {...ageObject}
+
+console.log(copyofAgeObject)
